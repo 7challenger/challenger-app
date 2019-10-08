@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+.is-invisible {
+  opacity: 0;
+  visibility: hidden;
+
+  transition: visibility 100ms 100ms, opacity 200ms linear;
+}
+
+.is-visible {
+  opacity: 1;
+  visibility: visible;
+
+  transition: opacity 200ms linear;
+}
+
+.window {
+  position: absolute;
+  border: 2px solid grey;
+  box-shadow: 1px 1px 11px black;
+}
+
+.app-wrapper {
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  font-family: Fira Code, monospace;
+  background-color: #1a1a1a;
+  /* background-color: royalblue; */
+  /* background: linear-gradient(180deg, tomato 35%, yellow 100%); */
+  width: 100%;
+  height: 100%;
+}
+
+.tray-wrapper {
+  display: flex;
+  background-color: #494949;
+  flex-direction: row;
+  /* padding: 2px 0; */
+}
+
+.tray-left {
+  display: flex;
+  flex: 1;
+}
+
+.tray-right {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.tray-menu {
+  padding: 5px;
+}
+
+.tray-menu-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.tray-menu-items-wrapper {
+  z-index: 1;
+  top: 22px;
+  left: 0px;
+  width: 170px;
+  position: absolute;
+  display: flex;
+  color: grey;
+  flex-direction: column;
+  background-color: #686868;
+}
+
+.tray-menu-delimiter {
+  z-index: 1;
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}
+
+.tray-menu-item {
+  height: 20px;
+  padding-left: 10px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: white;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.tray-menu-item:hover {
+  background-color: gray;
+}
+
+.tray-icon {
+  color: white;
+  margin-right: 5px;
+  border-radius: 5px;
+  background-color: darkgrey;
+  justify-content: center;
+  display: flex;
+  min-width: 90px;
+}
+
+.tray-pad {
+  color: white;
+  padding-left: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-right: 5px;
+  border-radius: 2px;
+  background-color: royalblue;
+  display: flex;
+  justify-content: flex-start;
+  min-width: 150px;
+  opacity: 0.7;
+}
+
+.tray-pad:hover {
+  /* opacity: 0.7; */
+}
+
+.tray-pad__is-active {
+  opacity: 1;
+  /* background-color: blue; */
+}
+
+.datetime-widget-wrapper {
+  top: 10em;
+  left: 4em;
+  line-height: 0.8;
+  color: white;
+  display: flex;
+  position: absolute;
+  align-items: center;
+}
+
+.datetime-widget-time {
+  font-size: 5em;
+  padding-right: 0.2em;
+}
+
+.datetime-widget-date-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.datetime-widget-date-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.datetime-widget-date-large {
+  font-size: 3em;
+}
+
+.datetime-widget-date-medium {
+  font-size: 0.8em;
+}
+
+.distro-wrapper {
+  color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -143px;
+  margin-left: -134px;
+  font-size: 0.7em;
+}
+
+.distro-content {
+  white-space: pre-wrap;
+  /* max-width: 269; */
+  /* min-height: 285; */
+}
+
+.terminal-wrapper {
+  color: #abca71;
+  /* the same as app wrapper background color */
+  background-color: black;
+  /* position: absolute; */
+}
+
+.terminal-view {
+  min-width: 500px;
+  max-width: 600px;
+  min-height: 500px;
+  max-height: 500px;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-lines-wrapper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  align-self: flex-start;
+  overflow: scroll;
+  width: 100%;
+}
+
+.terminal-line {
+  color: #abca71;
+  margin-top: 0.15rem;
+}
+
+.terminal-active-line-wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.terminal-activeline-label {
+  height: calc(12px + 0.25vw);
+}
+
+.terminal-activeline-input {
+  flex: 1;
+  font-family: inherit;
+  border: none;
+  color: #abca71;
+  background-color: black;
+  font-size: calc(12px + 0.25vw);
+  outline: none;
+  margin-left: 10px;
+}
