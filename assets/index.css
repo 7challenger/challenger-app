@@ -44,6 +44,76 @@
   /* padding: 2px 0; */
 }
 
+.login-tray {
+  display: flex;
+  justify-content: center;
+}
+
+.login-form {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-input-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.login-input__label {
+  color: #a8aaa5;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.login-input-form__password {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.login-input {
+  padding: 2 10px;
+  color: white;
+  background-color: #282828;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.login-submit-button {
+  margin-top: 10px;
+  background-color: #25476a;
+  color: white;
+  padding: 5px 20px;
+  align-self: flex-end;
+  border-radius: 3px;
+  border: 1px grey solid;
+}
+
+.login-avatar {
+  margin-right: 30px;
+  padding: 3px;
+  width: 100px;
+  height: 100px;
+  border: 2px white solid;
+}
+
+.login-input__username-block {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 15px;
+}
+
+.login-input__password-block {
+  display: flex;
+  flex-direction: column;
+}
+
 .tray-left {
   display: flex;
   flex: 1;
@@ -66,7 +136,7 @@
 
 .tray-menu-items-wrapper {
   z-index: 1;
-  top: 22px;
+  top: 32px;
   left: 0px;
   width: 170px;
   position: absolute;

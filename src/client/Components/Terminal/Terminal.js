@@ -14,7 +14,11 @@ import {
   BottomLine,
 } from './Lines';
 
-@connect(null, { closeWindow })
+@connect((state) => {
+  return {
+    userName: state.auth.userName,
+  };
+}, { closeWindow })
 class Terminal extends React.Component {
   state = { lines: [] }
 
@@ -48,6 +52,7 @@ class Terminal extends React.Component {
           <Lines>
             {this.state.lines.map(this.renderLine)}
             <ActiveLine
+              userName={this.props.userName}
               onSubmit={this.onSubmit}
               withFocusPropRef={this.props.withFocusPropRef}
             />

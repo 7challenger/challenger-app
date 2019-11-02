@@ -26,7 +26,7 @@ export const Line = ({ children }) => {
 export class ActiveLine extends React.Component {
   state = { text: '' }
 
-  label = 'hackme $'
+  label = `${this.props.userName} $`
 
   onChange = (event) => {
     this.setState({ text: event.target.value });

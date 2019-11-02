@@ -7,7 +7,7 @@ import Login from '../modules/auth/Components/Login';
 
 @connect((state) => {
   return {
-    isUserAuthenticated: !!state.auth.user,
+    isUserAuthenticated: !!state.auth.userName,
   };
 })
 class AuthWrapper extends React.Component {

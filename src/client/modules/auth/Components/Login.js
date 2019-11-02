@@ -41,7 +41,7 @@ class Login extends React.Component {
 
     return (
       <form className="app-wrapper" style={{ backgroundColor: '#313639' }}>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className="login-tray">
           <div style={{ color: 'white' }}>
             <ClientRenderer>
               <DateTimeWidgetProvider>
@@ -53,32 +53,50 @@ class Login extends React.Component {
           </div>
         </div>
 
-        <div
-          style={{
-            display: 'flex',
-            flex: '1',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'column', width: '350px' }}>
-            <div style={{ display: 'flex', alignItems: 'flex-end', marginBottom: '15px' }}>
-              <img src="./avatar-icon.png" alt="" style={{ marginRight: '30px', padding: '3px', width: '100px', height: '100px', border: '2px white solid' }} />
-              <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <span style={{ color: '#a8aaa5', fontSize: '14px', fontWeight: '400', marginBottom: '10px' }}>Username:</span>
-                <input onChange={this.onUserNameChange} ref={this.userNameInputRef} style={{ padding: '2 10px', color: 'white', backgroundColor: '#282828', fontSize: '18px', borderRadius: '5px' }} />
-              </div>
+        <div className="login-form">
+          <div className="login-input__username-block">
+            <img
+              alt="login-avatar"
+              src="./avatar-icon.png"
+              className="login-avatar"
+            />
+            <div className="login-input-form">
+              <span className="login-input__label">Username:</span>
+              <input
+                className="login-input"
+                ref={this.userNameInputRef}
+                onChange={this.onUserNameChange}
+              />
+            </div>
+          </div>
+
+          <div className="login-input__password-block">
+            <div className="login-input-form__password">
+              <span className="login-input__label">Password:</span>
+
+              {loginError && (
+                <span
+                  style={{ color: 'red' }}
+                  className="login-input__label"
+                >
+                  {loginError}
+                </span>
+              )}
+
+              <input
+                type="password"
+                className="login-input"
+                onChange={this.onPasswordChange}
+              />
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <span style={{ color: '#a8aaa5', fontSize: '14px', fontWeight: '400', marginBottom: '10px' }}>Password:</span>
-                {loginError && <span style={{ color: 'red', fontSize: '14px', fontWeight: '400', marginBottom: '10px' }}>{loginError}</span>}
-                <input onChange={this.onPasswordChange} style={{ padding: '2 10px', color: 'white', backgroundColor: '#282828', fontSize: '18px', borderRadius: '5px' }} type="password" />
-              </div>
-
-              <button onClick={this.onSubmit} style={{ marginTop: '10px', backgroundColor: '#25476a', color: 'white', padding: '5px 20px', alignSelf: 'flex-end', borderRadius: '3px', border: '1px grey solid' }} type="submit">Unlock</button>
-            </div>
+            <button
+              type="submit"
+              onClick={this.onSubmit}
+              className="login-submit-button"
+            >
+              Unlock
+            </button>
           </div>
         </div>
       </form>
