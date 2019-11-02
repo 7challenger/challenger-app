@@ -36,6 +36,7 @@ class Window extends React.Component {
 
   onMouseUp = () => {
     this.setState({ isMouseDown: false }, this.props.onFocus);
+    document.removeEventListener('mousemove', this.onDrag);
   }
 
   onMouseDown = (event) => {
@@ -43,6 +44,7 @@ class Window extends React.Component {
     event.stopPropagation();
 
     this.setState({ isMouseDown: true, clientRect: { top: event.clientY, left: event.clientX } });
+    document.addEventListener('mousemove', this.onDrag);
   }
 
   onDrag = (event) => {
@@ -78,9 +80,9 @@ class Window extends React.Component {
         })}
       >
         <div
-          onMouseMove={this.onDrag}
+          // onMouseMove={this.onDrag}
           onMouseUp={this.onMouseUp}
-          onMouseLeave={this.onMouseUp}
+          // onMouseLeave={this.onMouseUp}
           onMouseDown={this.onMouseDown}
           style={{
             backgroundColor: 'gray',
