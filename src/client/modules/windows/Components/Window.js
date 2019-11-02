@@ -80,9 +80,7 @@ class Window extends React.Component {
         })}
       >
         <div
-          // onMouseMove={this.onDrag}
           onMouseUp={this.onMouseUp}
-          // onMouseLeave={this.onMouseUp}
           onMouseDown={this.onMouseDown}
           style={{
             backgroundColor: 'gray',
