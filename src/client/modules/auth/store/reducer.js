@@ -12,10 +12,16 @@ const authReducer = (state = initialState, action) => {
         user: true,
       };
 
-    case AT.LOGIN:
+    case AT.LOGIN_SUCCESS:
       return {
         ...state,
         user: true,
+      };
+
+    case AT.LOGIN_ERROR:
+      return {
+        ...state,
+        error: action.error,
       };
 
     case AT.LOGOUT:

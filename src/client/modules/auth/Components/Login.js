@@ -5,7 +5,11 @@ import { loginThunk } from '../store/thunks';
 import ClientRenderer from '../../../utils/ClientRenderer';
 import DateTimeWidgetProvider from '../../../Components/DateTimeWidget/DateTimeWidgetProvider';
 
-@connect(null, { loginThunk })
+@connect((state) => {
+  return {
+    loginError: state.auth.error,
+  };
+}, { loginThunk })
 class Login extends React.Component {
   userNameInputRef = React.createRef()
 
@@ -33,6 +37,8 @@ class Login extends React.Component {
   }
 
   render() {
+    const { loginError } = this.props;
+
     return (
       <form className="app-wrapper" style={{ backgroundColor: '#313639' }}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -67,8 +73,10 @@ class Login extends React.Component {
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <span style={{ color: '#a8aaa5', fontSize: '14px', fontWeight: '400', marginBottom: '10px' }}>Password:</span>
+                {loginError && <span style={{ color: 'red', fontSize: '14px', fontWeight: '400', marginBottom: '10px' }}>{loginError}</span>}
                 <input onChange={this.onPasswordChange} style={{ padding: '2 10px', color: 'white', backgroundColor: '#282828', fontSize: '18px', borderRadius: '5px' }} type="password" />
               </div>
+
               <button onClick={this.onSubmit} style={{ marginTop: '10px', backgroundColor: '#25476a', color: 'white', padding: '5px 20px', alignSelf: 'flex-end', borderRadius: '3px', border: '1px grey solid' }} type="submit">Unlock</button>
             </div>
           </div>

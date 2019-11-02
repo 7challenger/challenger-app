@@ -81,7 +81,7 @@ export const loginThunk = (creds) => {
       return;
     }
 
-    await delay(1000);
+    await delay(0);
     dispatch(loginSuccess(validatedCreds));
   };
 };
