@@ -11,7 +11,6 @@ import {
   Line,
   Lines,
   ActiveLine,
-  BottomLine,
 } from './Lines';
 
 @connect((state) => {
@@ -38,6 +37,8 @@ class Terminal extends React.Component {
   }
 
   render() {
+    const { userName } = this.props;
+
     return (
       <Window
         window={this.props.window}
@@ -52,13 +53,11 @@ class Terminal extends React.Component {
           <Lines>
             {this.state.lines.map(this.renderLine)}
             <ActiveLine
-              userName={this.props.userName}
+              userName={userName}
               onSubmit={this.onSubmit}
               withFocusPropRef={this.props.withFocusPropRef}
             />
           </Lines>
-
-          <BottomLine />
         </TerminalView>
       </Window>
     );

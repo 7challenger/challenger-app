@@ -57,11 +57,3 @@ export class ActiveLine extends React.Component {
     );
   }
 }
-
-export const BottomLine = () => {
-  return (
-    <div>
-      ~/hackme/projects/
-    </div>
-  );
-};

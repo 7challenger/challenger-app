@@ -1,3 +1,9 @@
+html {
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +23,11 @@
   visibility: visible;
 
   transition: opacity 200ms linear;
+}
+
+.is-fullscreen {
+  width: 100%;
+  height: 100%;
 }
 
 .window {
@@ -257,11 +268,9 @@
 }
 
 .terminal-view {
-  min-width: 500px;
-  max-width: 600px;
-  min-height: 500px;
-  max-height: 500px;
-  padding: 0.5rem;
+  width: 100%;
+  height: calc(100% - 20px);
+  /* padding: 0.5rem; */
   display: flex;
   flex-direction: column;
 }

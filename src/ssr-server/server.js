@@ -1,6 +1,7 @@
 import 'babel-polyfill';
 
 import express from 'express';
+// import useragent from 'useragent';
 
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
@@ -22,6 +23,8 @@ app.use(express.static('assets', { index: false }));
 app.get('/', async (req, res) => {
   // TODO: move to serialize
   const storeData = JSON.stringify(store.getState());
+
+  // const agent = useragent.lookup(req.header('user-agent'));
 
   return res.send(
     `<html>
